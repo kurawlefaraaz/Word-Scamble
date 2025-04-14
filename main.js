@@ -8,12 +8,14 @@ navRect = document.getElementById("button_cont").getBoundingClientRect()
 
 function randomPosElements(classname){
     var createdElement = document.createElement("img");
+    var delay_secs = getRndInteger(0, 20);
+
     createdElement.setAttribute("class", classname);
     createdElement.setAttribute("src", `assets/${classname}.png`);
-    createdElement.style.animation = `moveElements 30s linear ${getRndInteger(0, 20)}s infinite`;
+    createdElement.style.animation = `moveElements 30s linear ${delay_secs}s infinite`;
     createdElement.style.top = `${(getRndInteger(0, 90))}vh`;
     
-    document.body.append(createdElement);
+    // document.body.append(createdElement);
     var secRect = createdElement.getBoundingClientRect();
 
     if (secRect.top >= mainCloudRect.top && secRect.bottom <= mainCloudRect.bottom){
@@ -21,6 +23,7 @@ function randomPosElements(classname){
     } else if(secRect.top >= navRect.top && secRect.bottom <= navRect.bottom ){
         createdElement.style.zIndex = -1;
     }
+    setTimeout(()=>document.body.append(createdElement), delay_secs*1000);
 }
 
 function addCloudAtRandom(){
