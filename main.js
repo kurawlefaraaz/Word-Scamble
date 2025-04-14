@@ -27,7 +27,7 @@ function randomPosElements(classname){
     setTimeout(()=>createdElement.style.visibility = "visible", delay_secs*1000);
 }
 
-function addCloudAtRandom(){
+function addElementsAtRandom(){
     for(let i=0; i<= 9; i++){
         randomPosElements("cloud")
     }
@@ -53,6 +53,6 @@ function executeButton(e){
 
 function main(){
     document.body.addEventListener("keydown", executeButton);
-    addCloudAtRandom();
+    addElementsAtRandom();
 }
 main();
