@@ -46,7 +46,7 @@ header{
 }
 
 @keyframes moveElements {
-    from{left: -10vw;}
+    from{left: 0vw;}
     to{left: 120vw;}
 }
 
