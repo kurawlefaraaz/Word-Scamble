@@ -46,8 +46,8 @@ header{
 }
 
 @keyframes moveElements {
-    from{left: -10%;}
-    to{left: 120%;}
+    from{left: -10vw;}
+    to{left: 120vw;}
 }
 
 .cloud, .bird{
