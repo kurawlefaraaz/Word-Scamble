@@ -14,8 +14,9 @@ function randomPosElements(classname){
     createdElement.setAttribute("src", `assets/${classname}.png`);
     createdElement.style.animation = `moveElements 30s linear ${delay_secs}s infinite`;
     createdElement.style.top = `${(getRndInteger(0, 90))}vh`;
+    createdElement.style.visibility = "hidden";
     
-    // document.body.append(createdElement);
+    document.body.append(createdElement);
     var secRect = createdElement.getBoundingClientRect();
 
     if (secRect.top >= mainCloudRect.top && secRect.bottom <= mainCloudRect.bottom){
@@ -23,7 +24,7 @@ function randomPosElements(classname){
     } else if(secRect.top >= navRect.top && secRect.bottom <= navRect.bottom ){
         createdElement.style.zIndex = -1;
     }
-    setTimeout(()=>document.body.append(createdElement), delay_secs*1000);
+    setTimeout(()=>createdElement.style.visibility = "visible", delay_secs*1000);
 }
 
 function addCloudAtRandom(){
