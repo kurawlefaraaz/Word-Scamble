@@ -3,16 +3,33 @@ function getRndInteger(min, max) {
 }
 
 topArr= [0, 20, 40, 50, 60, 65, 70,]
+mainCloudRect = document.getElementById("logo").getBoundingClientRect()
+navRect = document.getElementById("button_cont").getBoundingClientRect()
+
+function randomPosElements(classname){
+    var createdElement = document.createElement("img");
+    createdElement.setAttribute("class", classname);
+    createdElement.setAttribute("src", `assets/${classname}.png`);
+    createdElement.style.animation = `moveElements 30s linear ${getRndInteger(0, 20)}s infinite`;
+    createdElement.style.top = `${(getRndInteger(0, 90))}vh`;
+    
+    document.body.append(createdElement);
+    var secRect = createdElement.getBoundingClientRect();
+
+    if (secRect.top >= mainCloudRect.top && secRect.bottom <= mainCloudRect.bottom){
+        createdElement.style.zIndex = Math.round(Math.random() * -1)
+    } else if(secRect.top >= navRect.top && secRect.bottom <= navRect.bottom ){
+        createdElement.style.zIndex = -1;
+    }
+}
+
 function addCloudAtRandom(){
-    for(let i=0; i<= 7; i++){
-        var cloud = document.createElement("img");
-        cloud.setAttribute("class", "cloud");
-        cloud.setAttribute("src", "assets/cloud.png");
+    for(let i=0; i<= 9; i++){
+        randomPosElements("cloud")
+    }
 
-        cloud.style.left = `-${(getRndInteger(10, 50))}vw`;
-        cloud.style.top = `${topArr[i]}vh`;
-
-        document.body.append(cloud);
+    for(let i=0; i<= 9; i++){
+        randomPosElements("bird")
     }
 }
 
