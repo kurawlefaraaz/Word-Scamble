@@ -10,7 +10,7 @@ export function randomPosElements(classname){
     var delay_secs = getRandomInteger(0, 20);
 
     createdElement.setAttribute("class", classname);
-    createdElement.setAttribute("src", `/assets/${classname}.png`);
+    createdElement.setAttribute("src", `../assets/${classname}.png`);
     createdElement.style.animation = `moveElements 30s linear ${delay_secs}s infinite `;
     createdElement.style.top = `${(getRandomInteger(0, 90))}vh`;
     createdElement.style.visibility = "hidden";
