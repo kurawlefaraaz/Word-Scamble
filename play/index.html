@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play: Word-Scamble</title>
+    <link rel="stylesheet" href="play.css">
+</head>
+<body>
+    <nav>
+        <a onclick="history.back()">&lt</a>
+    </nav>
+    <header class="content-wrapper" id="heading">
+        <span id="wrap-highscore" style="display: none;">
+            <span>HighScore: </span>
+            <span id="hscore">0</span>
+        </span>
+        <span id="wrap-score">
+            <span>Score: </span>
+            <span id="score">0</span>
+        </span>
+    </header>
+    <main class="content-wrapper">
+        <section>
+            <h1 id="rand-word-container"></h1>
+        </section>
+        <section id="usr-input-container">
+            <input type="text" id="correct-word-input">
+        </section>
+        <section id="hint-submit-container">
+            <input type="button" value="Get Hint: -100pt" id="hint">
+            <input type="button" value="Submit" id="submit"> 
+        </section>
+    </main>
+    <script src="play.js"></script>
+</body>
+</html>
